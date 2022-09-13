@@ -1,1 +1,5 @@
 node_modules/
+dist
+.rollup.cache
+.vscode
+.DS_Store

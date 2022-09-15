@@ -1,6 +1,6 @@
 import React from 'react';
 import WonThemeContext from '../WonThemeContext/WonThemeContext';
-import useWonTheme from '../useTheme';
+import useWonTheme from '../useWonTheme';
 import WonTheme from '../WonTheme';
 
 export interface WonThemeProviderProps {

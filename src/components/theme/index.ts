@@ -1,3 +1,8 @@
+import WonTheme from './WonTheme';
+
+export interface PropsWithTheme {
+  wonTheme: WonTheme;
+}
 export { default as WonThemeContext } from './WonThemeContext'
 export * from './WonThemeContext';
 

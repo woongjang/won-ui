@@ -16,7 +16,7 @@ function WonThemeProvider(props: React.PropsWithChildren<WonThemeProviderProps>)
     }
     return {
       ...wonThemeCtx,
-      propTheme,
+      ...propTheme,
     }
   }, [propTheme]);
 

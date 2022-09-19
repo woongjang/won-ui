@@ -1,7 +1,20 @@
 import React, { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import useSelectState from './hooks/useSelectState';
-import { SelectProps, SelectState } from './types';
+
+export interface SelectState {
+  isOpen: boolean;
+  value: string;
+  onChange: (value: string) => void;
+  onOpen: (isOpen: boolean) => void;
+}
+
+export interface SelectProps {
+  isOpen?: boolean;
+  value?: string;
+  onChange?: (value: string) => void;
+  onOpen?: (isOpen: boolean) => void;
+}
 
 export const SelectContext = React.createContext<SelectState | undefined>(
   undefined,

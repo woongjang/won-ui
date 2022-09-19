@@ -16,6 +16,7 @@ export * from './WonNavigation';
 export { default as WonSearch } from './WonSearch';
 export * from './WonSearch';
 
+export { default as WonSelect } from './WonSelect';
 export * from './WonSelect';
 
 export { default as WonSider } from './WonSider';

@@ -48,17 +48,13 @@ const SearchInput = styled.input`
   width: 100%;
 `;
 
-interface Props {
+interface WonSearchProps<T> {
   icon?: boolean;
+  value: T;
 }
 
-SearchWrapper.defaultProps = {
-  theme: {},
-};
-
-function WonSearch({ icon = true }: Props) {
+function WonSearch<T>({ icon = true }: WonSearchProps<T>) {
   const theme = useWonTheme();
-  console.log(theme);
   return (
     <SearchWrapper wonTheme={theme}>
       {icon && <SearchIcon />}

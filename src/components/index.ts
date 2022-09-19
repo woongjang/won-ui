@@ -10,6 +10,9 @@ export * from './WonHeader';
 export { default as WonLayout } from './WonLayout';
 export * from './WonLayout';
 
+export { default as WonNavigation } from './WonNavigation';
+export * from './WonNavigation';
+
 export { default as WonSearch } from './WonSearch';
 export * from './WonSearch';
 

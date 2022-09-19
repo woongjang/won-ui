@@ -6,6 +6,10 @@ export * from './WonGrid';
 
 export { default as WonHeader } from './WonHeader';
 export * from './WonHeader';
+
+export { default as WonLayout } from './WonLayout';
+export * from './WonLayout';
+
 export { default as WonSearch } from './WonSearch';
 export * from './WonSearch';
 

@@ -17,6 +17,9 @@
 - Editor
 - Modal
 - Search (+ Modal)
+- Carousel
+- Pagination
+- Infinite Scroll
 
 <br/>
 

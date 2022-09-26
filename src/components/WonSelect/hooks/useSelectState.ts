@@ -1,27 +1,30 @@
 import React from 'react';
 
-interface HookParam {
-  value?: string;
+export interface SelectState<T> {
+  value?: T;
   isOpen?: boolean;
-  defaultValue?: string;
+  defaultValue?: T;
   defaultOpen?: boolean;
+  disabled?: boolean;
   onOpen?: (isOpen: boolean) => void;
-  onChange?: (value: string) => void;
+  onChange?: (value: T) => void;
 }
 
-function useSelectState(param: HookParam) {
+function useSelectState<T>(param: SelectState<T>) {
   const {
     value: paramValue,
     isOpen: paramIsOpen,
     defaultValue,
     defaultOpen,
+    disabled: paramDisabled,
     onOpen,
     onChange,
   } = param;
-  const [value, setValue] = React.useState<string>(defaultValue || '');
+  const [value, setValue] = React.useState(defaultValue);
   const [isOpen, setIsOpen] = React.useState<boolean>(
     defaultOpen === undefined ? false : defaultOpen,
   );
+  const [disabled, setDisabled] = React.useState(paramDisabled || false);
 
   React.useEffect(() => {
     if (paramValue !== undefined) {
@@ -35,7 +38,7 @@ function useSelectState(param: HookParam) {
     }
   }, [paramIsOpen]);
 
-  const handleChangeValue = React.useCallback((updateValue: string) => {
+  const handleChangeValue = React.useCallback((updateValue: T) => {
     if (onChange) {
       onChange(updateValue);
     }
@@ -54,6 +57,7 @@ function useSelectState(param: HookParam) {
     onChange: handleChangeValue,
     isOpen,
     onOpen: handleOpen,
+    disabled,
   };
 }
 

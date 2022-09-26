@@ -11,7 +11,9 @@ const LabelWrapper = styled.div`
 const Label = styled.button`
   padding: 3px 16px 3px 5px;
   min-width: 100px;
+  width: 100%;
   font-size: 14px;
+  min-height: 27px;
   background-color: #e6ffff;
   border: none;
   border-radius: 5px;
@@ -27,13 +29,13 @@ const Label = styled.button`
   text-overflow: ellipsis;
 `;
 
-const LabelArrow = styled.span<{ isOpen: boolean }>`
+const LabelArrow = styled.span<{ isOpen: boolean | undefined }>`
   margin-bottom: 4px;
   position: absolute;
   right: 8px;
   align-self: center;
   padding: 3px;
-  top: ${(props) => (props.isOpen ? '8px' : '6px')};
+  top: ${(props) => (props.isOpen ? '11px' : '8px')};
   box-sizing: border-box;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
@@ -50,17 +52,17 @@ const LabelClose = styled(AiFillCloseCircle)`
 function WonSelectLabel({ children }: React.PropsWithChildren) {
   const { isOpen, value, onOpen, onChange } = useSelectContext();
   const handleClickLabel = (_: React.MouseEvent<HTMLDivElement>) => {
-    onOpen(!isOpen);
+    if (onOpen) onOpen(!isOpen);
   };
   const handleRemoveValue = (e: React.MouseEvent<HTMLOrSVGElement>) => {
     e.stopPropagation();
-    onChange('');
+    if (onChange) onChange(undefined);
   };
   return (
     <LabelWrapper onClick={handleClickLabel}>
       <Label className="won-select-label">
         {value === '' ? children : value}
-        {value !== '' ? (
+        {value !== undefined ? (
           <LabelClose onClick={handleRemoveValue} />
         ) : (
           <LabelArrow className="won-select-arrow" isOpen={isOpen} />

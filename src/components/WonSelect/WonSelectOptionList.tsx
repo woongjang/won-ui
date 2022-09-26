@@ -26,7 +26,7 @@ function WonSelectOptionList({ children }: React.PropsWithChildren) {
       'won-select-label',
     );
     if (isLabelButton) return;
-    if (isOpen) onOpen(!isOpen);
+    if (isOpen && onOpen) onOpen(!isOpen);
   };
   useOutsideClick(listRef, handleBlurSelect);
   if (!isOpen) return null;

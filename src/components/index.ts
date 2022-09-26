@@ -21,3 +21,6 @@ export * from './WonSelect';
 
 export { default as WonSider } from './WonSider';
 export * from './WonSider';
+
+export { default as WonEditor } from './WonEditor';
+export * from './WonEditor';

@@ -58,10 +58,11 @@ function WonSelectLabel({ children }: React.PropsWithChildren) {
     e.stopPropagation();
     if (onChange) onChange(undefined);
   };
+
   return (
     <LabelWrapper onClick={handleClickLabel}>
       <Label className="won-select-label">
-        {value === '' ? children : value}
+        {value === undefined ? children : value}
         {value !== undefined ? (
           <LabelClose onClick={handleRemoveValue} />
         ) : (

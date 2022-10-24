@@ -29,9 +29,10 @@
     "url": "https://github.com/woongjang/won-ui/issues"
   },
   "devDependencies": {
-    "@won-ui/tsconfig": "*",
+    "@emotion/react": "^11.10.4",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
+    "@won-ui/tsconfig": "*",
     "eslint": "^8.15.0",
     "eslint-config-acme": "*",
     "react": "^18.1.0",
@@ -40,5 +41,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "dependencies": {}
 }

@@ -1,12 +1,10 @@
 {
-  "name": "@woongjang/won-ui",
-  "version": "0.0.24",
-  "description": "ui library",
-  "author": "WON",
   "workspaces": [
     "packages/*",
     "apps/*"
   ],
+  "private": true,
+  "license": "MIT",
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --no-cache --parallel --continue",
@@ -16,19 +14,6 @@
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "turbo run build --filter=docs^... && changeset publish"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/woongjang/won-ui.git"
-  },
-  "keywords": [
-    "won-ui",
-    "won",
-    "react",
-    "react-component"
-  ],
-  "bugs": {
-    "url": "https://github.com/woongjang/won-ui/issues"
   },
   "homepage": "https://github.com/woongjang/won-ui#readme",
   "devDependencies": {

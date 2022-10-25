@@ -1,0 +1,8 @@
+{
+  "extends": "@won-ui/tsconfig/won-react.json",
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules"],
+  "compilerOptions": {
+    "types": ["vite/client", "@emotion/react/types/css-prop"]
+  }
+}

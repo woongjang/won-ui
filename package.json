@@ -21,7 +21,8 @@
     "eslint": "^8.15.0",
     "eslint-config-acme": "*",
     "prettier": "^2.5.1",
-    "turbo": "latest"
+    "turbo": "latest",
+    "nanoid": "^4.0.0"
   },
   "peerDependencies": {},
   "dependencies": {}

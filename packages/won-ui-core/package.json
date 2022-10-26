@@ -35,7 +35,6 @@
     "@won-ui/tsconfig": "*",
     "eslint": "^8.15.0",
     "eslint-config-acme": "*",
-    "nanoid": "^4.0.0",
     "react": "^18.1.0",
     "tsup": "^5.10.1",
     "typescript": "^4.5.3"

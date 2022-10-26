@@ -1,39 +1,32 @@
 import { ComponentMeta } from '@storybook/react';
-import { Input, InputBox } from '@won-ui/core/src';
+import { Text } from '@won-ui/core/src';
 import { css } from '@emotion/react';
 
 export default {
   title: 'won-ui/core/Text',
-  component: Input,
-} as ComponentMeta<typeof Input>;
+  component: Text,
+} as ComponentMeta<typeof Text>;
 
 export const Basic = () => {
   return (
-    <div
-      css={css`
-        display: flex;
-        flex-direction: column;
-        width: 100px;
-      `}
-    >
-      <Input />
-    </div>
+    <>
+      <Text as="span">as span</Text>
+      <Text as="div">as div</Text>
+      <Text as="div" size="xs">
+        xs
+      </Text>
+      <Text as="div" size="sm">
+        sm
+      </Text>
+      <Text as="div" size="md">
+        md
+      </Text>
+      <Text as="div" size="lg">
+        lg
+      </Text>
+      <Text as="div" size="xl">
+        xl
+      </Text>
+    </>
   );
 };
-
-export const WithInputBox = () => {
-  return (
-    <InputBox
-      id="test-id"
-      label="won-input-box"
-      css={css`
-        width: 400px;
-      `}
-      helperText="input-box for test"
-      errorText="input-box error"
-      required
-    >
-      <Input id="test-id"/>
-    </InputBox>
-  )
-}

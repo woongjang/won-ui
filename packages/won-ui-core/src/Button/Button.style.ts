@@ -8,7 +8,7 @@ export const button = css`
   height: 30px;
   border-radius: 6px;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 14px;
   cursor: pointer;
   user-select: none;
   letter-spacing: 2px;

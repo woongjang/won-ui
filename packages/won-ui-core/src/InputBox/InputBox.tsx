@@ -1,4 +1,5 @@
 import { CSSProperties, PropsWithChildren } from 'react';
+import { Text } from '../Text/Text';
 import { inputBox } from './InputBox.style';
 
 export interface InputBoxProps {
@@ -28,11 +29,16 @@ export function InputBox({
   return (
     <div className={className} css={inputBox.root} {...restProps}>
       <label css={inputBox.label} htmlFor={id}>
-        {label} {required && <span css={inputBox.required}>*</span>}
+        {label}{' '}
+        {required && (
+          <Text as="span" css={inputBox.required}>
+            *
+          </Text>
+        )}
       </label>
       {children}
-      {helperText && <p css={inputBox.helperText}>{helperText}</p>}
-      {errorText && <p css={inputBox.errorText}>{errorText}</p>}
+      {helperText && <Text css={inputBox.helperText}>{helperText}</Text>}
+      {errorText && <Text css={inputBox.errorText}>{errorText}</Text>}
     </div>
   );
 }

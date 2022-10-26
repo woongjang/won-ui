@@ -16,10 +16,14 @@ export const Basic = () => {
         width: 100px;
       `}
     >
-      <Button>Basic</Button>
-      <Button disabled>
-        Disabled
+      <Button
+        css={css`
+          margin-bottom: 10px;
+        `}
+      >
+        Basic
       </Button>
+      <Button disabled>Disabled</Button>
     </div>
   );
 };

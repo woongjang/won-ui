@@ -1,5 +1,4 @@
 import { ButtonHTMLAttributes, CSSProperties, PropsWithChildren } from 'react';
-import { css } from '@emotion/react';
 import { button } from './Button.style';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -19,9 +18,7 @@ export function Button({
   return (
     <button
       className={className}
-      css={css`
-        ${button};
-      `}
+      css={button}
       disabled={disabled}
       type={type}
       {...restProps}

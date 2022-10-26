@@ -1,4 +1,4 @@
-import { createElement, CSSProperties, PropsWithChildren } from 'react';
+import { CSSProperties, PropsWithChildren } from 'react';
 import { fontSizes, text } from './Text.style';
 
 export interface TextProps {

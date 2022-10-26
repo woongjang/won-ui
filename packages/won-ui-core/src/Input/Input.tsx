@@ -1,4 +1,3 @@
-import { css } from '@emotion/react';
 import { InputHTMLAttributes, CSSProperties } from 'react';
 import { input } from './Input.style';
 
@@ -14,9 +13,7 @@ export function Input({
   return (
     <input
       className={className}
-      css={css`
-        ${input}
-      `}
+      css={input}
       {...restProps}
     >
     </input>

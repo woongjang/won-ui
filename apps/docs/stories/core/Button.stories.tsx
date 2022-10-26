@@ -3,7 +3,7 @@ import { Button } from '@won-ui/core/src';
 import { css } from '@emotion/react';
 
 export default {
-  title: 'won-ui/Button',
+  title: 'won-ui/core/Button',
   component: Button,
 } as ComponentMeta<typeof Button>;
 

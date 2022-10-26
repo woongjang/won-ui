@@ -16,13 +16,7 @@ export function Button({
   ...restProps
 }: PropsWithChildren<ButtonProps>) {
   return (
-    <button
-      className={className}
-      css={button}
-      disabled={disabled}
-      type={type}
-      {...restProps}
-    >
+    <button className={className} css={button} disabled={disabled} type={type} {...restProps}>
       {children}
     </button>
   );

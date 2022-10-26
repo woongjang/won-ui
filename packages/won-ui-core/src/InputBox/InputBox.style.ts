@@ -24,4 +24,4 @@ export const inputBox = {
     font-size: 13px;
     margin: 3px 0;
   `,
-}
+};

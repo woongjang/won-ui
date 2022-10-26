@@ -26,24 +26,13 @@ export function InputBox({
   ...restProps
 }: PropsWithChildren<InputBoxProps>) {
   return (
-    <div
-      className={className}
-      css={inputBox.root}
-      {...restProps}
-    >
-      <label
-        css={inputBox.label}
-        htmlFor={id}
-      >
+    <div className={className} css={inputBox.root} {...restProps}>
+      <label css={inputBox.label} htmlFor={id}>
         {label} {required && <span css={inputBox.required}>*</span>}
       </label>
       {children}
-      {helperText && (
-        <p css={inputBox.helperText}>{helperText}</p>
-      )}
-      {errorText && (
-        <p css={inputBox.errorText}>{errorText}</p>
-      )}
+      {helperText && <p css={inputBox.helperText}>{helperText}</p>}
+      {errorText && <p css={inputBox.errorText}>{errorText}</p>}
     </div>
-  )
+  );
 }

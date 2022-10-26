@@ -33,7 +33,7 @@ export const WithInputBox = () => {
       errorText="input-box error"
       required
     >
-      <Input id="test-id"/>
+      <Input id="test-id" />
     </InputBox>
-  )
-}
+  );
+};

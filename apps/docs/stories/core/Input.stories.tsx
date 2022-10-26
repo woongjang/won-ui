@@ -1,5 +1,5 @@
 import { ComponentMeta } from '@storybook/react';
-import { Input } from '@won-ui/core/src';
+import { Input, InputBox } from '@won-ui/core/src';
 import { css } from '@emotion/react';
 
 export default {
@@ -20,3 +20,20 @@ export const Basic = () => {
     </div>
   );
 };
+
+export const WithInputBox = () => {
+  return (
+    <InputBox
+      id="test-id"
+      label="won-input-box"
+      css={css`
+        width: 400px;
+      `}
+      helperText="input-box for test"
+      errorText="input-box error"
+      required
+    >
+      <Input id="test-id"/>
+    </InputBox>
+  )
+}

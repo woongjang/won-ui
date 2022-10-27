@@ -36,13 +36,13 @@ describe('Button', () => {
 
   it('[disabled] disabled 적용 여부', () => {
     const { rerender } = render(<Button data-testid={testId}>test</Button>);
-    expect(screen.getByTestId(testId)).not.toHaveAttribute('disabled');
+    expect(screen.getByTestId(testId)).not.toBeDisabled();
 
     rerender(
       <Button disabled data-testid={testId}>
         test
       </Button>
     );
-    expect(screen.getByTestId(testId)).toHaveAttribute('disabled');
+    expect(screen.getByTestId(testId)).toBeDisabled();
   });
 });

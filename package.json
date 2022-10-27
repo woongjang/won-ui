@@ -13,11 +13,16 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "turbo run build --filter=docs^... && changeset publish"
+    "release": "turbo run build --filter=docs^... && changeset publish",
+    "test": "turbo run test",
+    "test:watch": "turbo run test:watch"
   },
   "homepage": "https://github.com/woongjang/won-ui#readme",
   "devDependencies": {
     "@changesets/cli": "^2.22.0",
+    "@types/jest": "^29.2.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
     "eslint": "^8.15.0",
     "eslint-config-acme": "*",
     "prettier": "^2.5.1",

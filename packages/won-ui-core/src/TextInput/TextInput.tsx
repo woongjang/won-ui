@@ -1,6 +1,6 @@
 import { Override } from '@won-ui/types';
 import { nanoid } from 'nanoid';
-import { ChangeEvent, CSSProperties, InputHTMLAttributes, useCallback, useRef } from 'react';
+import { ChangeEvent, CSSProperties, InputHTMLAttributes, useRef } from 'react';
 import { Input, InputProps } from '../Input/Input';
 import { InputBox, InputBoxProps } from '../InputBox/InputBox';
 
@@ -26,12 +26,12 @@ export function TextInput({
   ...restProps
 }: TextInputProps) {
   const uniqueId = id || useRef(`won-ui-${nanoid()}`).current;
-  const handleChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     if (onChange) {
       onChange(value);
     }
-  }, []);
+  };
   return (
     <InputBox
       className={className}

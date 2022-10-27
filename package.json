@@ -30,7 +30,5 @@
     "turbo": "latest"
   },
   "peerDependencies": {},
-  "dependencies": {
-    "nanoid": "^3.1.30"
-  }
+  "dependencies": {}
 }

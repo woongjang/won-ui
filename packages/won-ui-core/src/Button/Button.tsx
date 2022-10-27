@@ -4,7 +4,6 @@ import { button } from './Button.style';
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   style?: CSSProperties;
-  type?: 'button' | 'submit';
   disabled?: boolean;
 }
 

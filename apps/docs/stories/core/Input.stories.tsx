@@ -39,3 +39,12 @@ export const BasicTextInput = () => {
     />
   )
 }
+
+export const DisabledTextInput = () => {
+  return (
+    <TextInput
+      onClick={() => {console.log('click')}}
+      disabled
+    />
+  )
+}

@@ -14,7 +14,11 @@
       "outputs": [
         "coverage/**"
       ],
-      "dependsOn": []
+      "dependsOn": [],
+      "inputs": ["src/**/*.test.tsx"]
+    },
+    "test:watch": {
+      "cache": false
     },
     "lint": {
       "outputs": []

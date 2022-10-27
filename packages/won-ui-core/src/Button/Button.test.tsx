@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
+import { cleanup, render, screen } from '@testing-library/react';
 import { Button, ButtonProps } from './Button';
 
 /**
@@ -8,6 +8,8 @@ import { Button, ButtonProps } from './Button';
  */
 
 describe('Button', () => {
+  afterEach(cleanup);
+
   const testId = 'won-ui-button';
   it('[rendering] Button 컴포넌트 렌더링', () => {
     render(<Button data-testid={testId} />);

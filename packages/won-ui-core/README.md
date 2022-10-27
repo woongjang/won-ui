@@ -1,25 +1,27 @@
 # won-ui
+학습을 위한 ui library 입니다.
 
 ## 제작 의도
 
-- 학습을 위한 ui-library입니다.
 - 많이 사용하는 ui-library들은 어떻게 구성했는가를 고민하며 작성중입니다.
+- turborepo를 통해서 모노레포 형태의 패키지로 이전했으며, 현재 이전 버전의 won-ui 컴포넌트들을 이전 중입니다. (select, layout ...)
 
 <br/>
 
 ## 개발된 컴포넌트
 
-- Layout, Header, Navigation, Sider
-- Grid
-- Select
+- Button
+- Heading
+- Input
+- InputBox
+- Text
+- TextInput
 
 <br/>
 
 ## 개발중인 컴포넌트
 
-- Editor
 - Modal
-- Search (+ Modal)
 - Carousel
 - Pagination
 - Infinite Scroll
@@ -29,28 +31,28 @@
 ## Installation
 
 ```Javascript
-  npm install @woongjang/won-ui
+  npm install @won-ui/core
 ```
 
 ```Javascript
-  yarn add @woongjang/won-ui
+  yarn add @won-ui/core
 ```
 
 <br/>
 
 ## Tech
 
+- turborepo
 - React
 - Typescript
-- styled-component
+- emotion
 - storybook
 - jest
 - testing-library
-- lexical(editor)
 
 <br/>
 
-## Usage
+~~아래 Usage는 이전 버전의 won-ui 입니다.~~
 
 <br/>
 

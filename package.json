@@ -19,16 +19,28 @@
   },
   "homepage": "https://github.com/woongjang/won-ui#readme",
   "devDependencies": {
+    "@babel/preset-env": "^7.19.4",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
     "@changesets/cli": "^2.22.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
     "@types/jest": "^29.2.0",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.4",
     "eslint": "^8.15.0",
     "eslint-config-acme": "*",
+    "jest": "^29.2.2",
+    "jest-environment-jsdom": "^29.2.2",
     "prettier": "^2.5.1",
-    "turbo": "latest"
+    "tsup": "^5.10.1",
+    "turbo": "latest",
+    "typescript": "^4.5.3"
   },
   "peerDependencies": {},
-  "dependencies": {}
+  "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "react": "^18.1.0"
+  }
 }

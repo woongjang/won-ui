@@ -16,4 +16,8 @@ export const input = css`
     border-color: black;
     box-shadow: 0 0 3px gray;
   }
+  
+  &:disabled {
+    border: 1px solid lightgray;
+  }
 `;

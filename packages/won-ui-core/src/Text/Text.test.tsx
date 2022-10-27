@@ -1,10 +1,9 @@
 import '@testing-library/jest-dom';
-import { cleanup, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Text } from './Text';
 
 describe('Text', () => {
   const testId = 'won-ui-text';
-  afterEach(cleanup);
   it('[rendering] Text 컴포넌트 렌더링', () => {
     render(<Text data-testid={testId}>test</Text>);
     expect(screen.getByTestId(testId)).toBeInTheDocument();

@@ -1,10 +1,9 @@
 import '@testing-library/jest-dom';
-import { cleanup, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Heading, HeadingProps } from './Heading';
 
 describe('Heading', () => {
   const testId = 'won-ui-heading';
-  afterEach(cleanup);
   it('[rendering] Heading 컴포넌트 렌더링', () => {
     render(<Heading data-testid={testId}>test</Heading>);
     expect(screen.getByTestId(testId)).toBeInTheDocument();

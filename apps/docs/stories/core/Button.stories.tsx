@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import { ComponentMeta } from '@storybook/react';
-import { Button } from '@won-ui/core/src';
+import { Button, Stack } from '@won-ui/core/src';
 
 export default {
   title: 'won-ui/core/Button',
@@ -9,10 +9,9 @@ export default {
 
 export const Basic = () => {
   return (
-    <div
+    <Stack
+      direction='column'
       css={css`
-        display: flex;
-        flex-direction: column;
         width: 100px;
         > * {
           margin-bottom: 10px;
@@ -34,6 +33,6 @@ export const Basic = () => {
       <Button color="purple">purple</Button>
       <Button color="green">green</Button>
       <Button color="teal">teal</Button>
-    </div>
+    </Stack>
   );
 };

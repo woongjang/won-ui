@@ -5,7 +5,7 @@
 
   "compilerOptions": {
     "paths": {
-      "@won-ui/*": ["src/won-ui-*/src"]
+      "@won-ui/*": ["packages/won-ui-*/src"]
     }
   }
 }

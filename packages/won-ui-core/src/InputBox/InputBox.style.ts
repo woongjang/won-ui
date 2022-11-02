@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { black, red } from '@won-ui/styles';
 
 export const inputBox = {
   root: css`
@@ -9,18 +10,18 @@ export const inputBox = {
     margin-bottom: 3px;
     font-size: 15px;
     font-weight: bold;
-    color: gray;
+    color: ${black[30]};
   `,
   required: css`
-    color: red;
+    color: ${red[60]};
   `,
   helperText: css`
     margin: 3px 0;
     font-size: 14px;
-    color: gray;
+    color: ${black[30]};
   `,
   errorText: css`
-    color: red;
+    color: ${red[50]};
     font-size: 13px;
     margin: 3px 0;
   `,

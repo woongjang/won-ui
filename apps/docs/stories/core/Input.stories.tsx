@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 import { ComponentMeta } from '@storybook/react';
 import { Input, Stack, Text, TextInput } from '@won-ui/core/src';
+import { Alien } from 'phosphor-react';
 
 export default {
   title: 'won-ui/core/Input',
@@ -22,7 +23,7 @@ export const Basic = () => {
       <Input />
       <Input error />
       <Text color="blue" as="span">with prefix</Text>
-      <Input prefix={<span>*</span>} />
+      <Input prefix={<Alien size={20} />} />
     </Stack>
   );
 };

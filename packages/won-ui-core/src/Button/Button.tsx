@@ -29,3 +29,5 @@ export function Button({
     </button>
   );
 }
+
+Button.displayName = 'WON-Button';

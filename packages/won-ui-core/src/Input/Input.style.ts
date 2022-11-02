@@ -1,6 +1,10 @@
 import { css } from '@emotion/react';
 import { black, blue, red } from '@won-ui/styles';
 
+export const inputContainer = css`
+  position: relative;
+`;
+
 export const input = css`
   font-family: Charcoal, sans-serif;
   font-size: 14px;
@@ -17,7 +21,7 @@ export const input = css`
     border-color: ${blue[60]};
     box-shadow: 0 0 3px ${blue[10]};
   }
-  
+
   &:disabled {
     border: 1px solid lightgray;
   }
@@ -26,4 +30,21 @@ export const input = css`
 export const errorInput = css`
   border-color: ${red[50]};
   box-shadow: 0 0 3px ${red[10]};
-`
+`;
+
+export const withPrefix = css`
+  padding-left: 30px;
+`;
+
+export const prefixStyle = css`
+  pointer-events: none;
+  position: absolute;
+  color: ${black[60]};
+  height: 36px;
+  width: 30px;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+`;

@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import { ComponentMeta } from '@storybook/react';
-import { Input, Stack, TextInput } from '@won-ui/core/src';
+import { Input, Stack, Text, TextInput } from '@won-ui/core/src';
 
 export default {
   title: 'won-ui/core/Input',
@@ -10,7 +10,8 @@ export default {
 export const Basic = () => {
   return (
     <Stack
-      direction='column'
+      direction="column"
+      align="flex-start"
       css={css`
         width: 100px;
         > * {
@@ -20,6 +21,8 @@ export const Basic = () => {
     >
       <Input />
       <Input error />
+      <Text color="blue" as="span">with prefix</Text>
+      <Input prefix={<span>*</span>} />
     </Stack>
   );
 };

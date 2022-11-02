@@ -6,16 +6,20 @@ interface TagProps {
   className?: string;
   style?: CSSProperties;
   color?: keyof typeof wonColor;
+  type?: 'light' | 'filled' | 'outline';
 }
-export function Tag({ className, color = 'black', children, ...props }: PropsWithChildren<TagProps>) {
+export function Tag({
+  className,
+  color = 'black',
+  children,
+  type = 'light',
+  ...props
+}: PropsWithChildren<TagProps>) {
   return (
-    <div
-      className={className}
-      css={tagStyle(color)}
-    >
+    <div className={className} css={tagStyle(color, type)}>
       {children}
     </div>
-  )
+  );
 }
 
 Tag.displayName = 'WON-Tag';

@@ -1,0 +1,34 @@
+{
+  "name": "@won-ui/hooks",
+  "version": "0.0.1",
+  "sideEffects": false,
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --external react",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/woongjang/won-ui.git"
+  },
+  "keywords": [
+    "won-ui",
+    "hooks",
+    "react",
+    "react-hooks"
+  ],
+  "devDependencies": {
+    "@won-ui/tsconfig": "*"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  }
+}

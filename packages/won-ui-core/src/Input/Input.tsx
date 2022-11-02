@@ -9,3 +9,5 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 export function Input({ className, error = false, ...restProps }: InputProps) {
   return <input className={className} css={[input, error && errorInput]} {...restProps} />;
 }
+
+Input.displayName = 'WON-Input';

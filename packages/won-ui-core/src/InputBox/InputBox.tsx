@@ -42,3 +42,5 @@ export function InputBox({
     </div>
   );
 }
+
+InputBox.displayName = 'WON-InputBox';

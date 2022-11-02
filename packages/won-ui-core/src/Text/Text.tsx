@@ -22,3 +22,5 @@ export function Text({
     </Component>
   );
 }
+
+Text.displayName = 'WON-Text';

@@ -44,3 +44,5 @@ export function TextInput({
     </InputBox>
   );
 }
+
+TextInput.displayName = 'WON-TextInput';

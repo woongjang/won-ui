@@ -29,7 +29,7 @@ export function InputBox({
   return (
     <div className={className} css={inputBox.root} {...restProps}>
       <label css={inputBox.label} htmlFor={id}>
-        {label}{' '}
+        {label}
         {required && (
           <Text as="span" css={inputBox.required}>
             *

@@ -141,3 +141,17 @@ export const green = {
   10: '#E8FDEC',
 };
 
+
+export const wonColor = {
+  black,
+  red,
+  orange,
+  magenta,
+  yellow,
+  blue,
+  indigo,
+  purple,
+  cyan,
+  teal,
+  green,
+}

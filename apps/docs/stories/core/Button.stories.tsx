@@ -1,6 +1,6 @@
+import { css } from '@emotion/react';
 import { ComponentMeta } from '@storybook/react';
 import { Button } from '@won-ui/core/src';
-import { css } from '@emotion/react';
 
 export default {
   title: 'won-ui/core/Button',
@@ -14,18 +14,26 @@ export const Basic = () => {
         display: flex;
         flex-direction: column;
         width: 100px;
+        > * {
+          margin-bottom: 10px;
+        }
       `}
     >
-      <Button
-        css={css`
-          margin-bottom: 10px;
-        `}
-      >
+      <Button>
         Basic
       </Button>
       <Button disabled>Disabled</Button>
+      <Button color="black">black</Button>
+      <Button color="red">red</Button>
+      <Button color="orange">orange</Button>
+      <Button color="magenta">magenta</Button>
+      <Button color="yellow">yellow</Button>
+      <Button color="blue">blue</Button>
+      <Button color="cyan">cyan</Button>
+      <Button color="indigo">indigo</Button>
+      <Button color="purple">purple</Button>
+      <Button color="green">green</Button>
+      <Button color="teal">teal</Button>
     </div>
   );
 };
-
-// const Template: ComponentStory<typeof Button> = props => <Button {...props} />;

@@ -38,6 +38,7 @@ export function TextInput({
       label={label}
       helperText={helperText}
       errorText={errorText}
+      required={required}
     >
       <Input id={uniqueId} type={type} value={value} onChange={handleChange} {...restProps} />
     </InputBox>

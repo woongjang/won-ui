@@ -1,0 +1,11 @@
+{
+  "plugins": [],
+  "include": ["./"],
+  "exclude": ["dist"],
+
+  "compilerOptions": {
+    "paths": {
+      "@won-ui/*": ["src/won-ui-*/src"]
+    }
+  }
+}

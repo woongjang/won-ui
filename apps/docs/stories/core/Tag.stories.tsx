@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import { ComponentMeta } from '@storybook/react';
-import { Tag } from '@won-ui/core/src';
+import { Stack, Tag } from '@won-ui/core/src';
 
 export default {
   title: 'won-ui/core/Tag',
@@ -9,10 +9,9 @@ export default {
 
 export const Basic = () => {
   return (
-    <div
+    <Stack
+      align="flex-start"
       css={css`
-        display: flex;
-        justify-content: flex-start;
         > * {
           margin: 5px;
         }
@@ -29,6 +28,6 @@ export const Basic = () => {
       <Tag color="purple">purple</Tag>
       <Tag color="green">green</Tag>
       <Tag color="teal">teal</Tag>
-    </div>
+    </Stack>
   );
 };

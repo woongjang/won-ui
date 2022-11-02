@@ -1,6 +1,5 @@
 import { ComponentMeta } from '@storybook/react';
 import { Text } from '@won-ui/core/src';
-import { css } from '@emotion/react';
 
 export default {
   title: 'won-ui/core/Text',

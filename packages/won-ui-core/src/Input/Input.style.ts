@@ -22,3 +22,8 @@ export const input = css`
     border: 1px solid lightgray;
   }
 `;
+
+export const errorInput = css`
+  border-color: ${red[50]};
+  box-shadow: 0 0 3px ${red[10]};
+`

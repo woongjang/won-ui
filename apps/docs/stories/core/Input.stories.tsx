@@ -14,20 +14,20 @@ export const Basic = () => {
         display: flex;
         flex-direction: column;
         width: 100px;
+        > * {
+          margin-bottom: 10px;
+        }
       `}
     >
       <Input />
+      <Input error />
     </div>
   );
 };
 
 export const BasicTextInput = () => {
-  // const [value, setValue] = useState('');
-
   return (
     <TextInput
-      // value={value}
-      // onChange={setValue}
       id="test-id"
       label="won-input-box"
       css={css`
@@ -37,14 +37,9 @@ export const BasicTextInput = () => {
       errorText="input-box error"
       required
     />
-  )
-}
+  );
+};
 
 export const DisabledTextInput = () => {
-  return (
-    <TextInput
-      onClick={() => {console.log('click')}}
-      disabled
-    />
-  )
-}
+  return <TextInput disabled />;
+};

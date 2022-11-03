@@ -1,6 +1,6 @@
 {
   "name": "@won-ui/hooks",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "sideEffects": false,
   "license": "MIT",
   "main": "./dist/index.js",

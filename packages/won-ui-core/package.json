@@ -38,7 +38,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.4"
+    "@emotion/react": "^11.10.4",
+    "@won-ui/hooks": "*"
   },
   "peerDependencies": {
     "react": ">=16.8.0",

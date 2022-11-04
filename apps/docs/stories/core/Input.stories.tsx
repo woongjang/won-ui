@@ -22,8 +22,8 @@ export const Basic = () => {
     >
       <Input />
       <Input error />
-      <Text color="blue" as="span">with prefix</Text>
-      <Input prefix={<Alien size={20} />} />
+      <Text color="blue" as="span">with icon</Text>
+      <Input icon={<Alien size={20} />} />
     </Stack>
   );
 };

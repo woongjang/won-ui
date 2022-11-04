@@ -10,7 +10,7 @@ export interface TextInputProps
   value?: string;
   onChange?: (value: string) => void;
   style?: CSSProperties;
-  prefix?: ReactNode;
+  icon?: ReactNode;
 }
 
 export function TextInput({
@@ -23,7 +23,7 @@ export function TextInput({
   value,
   onChange,
   required,
-  prefix,
+  icon,
   ...restProps
 }: TextInputProps) {
   const uniqueId = id || useRef(`won-ui-${Math.random().toString(36).slice(2)}`).current;
@@ -47,7 +47,7 @@ export function TextInput({
         type={type}
         value={value}
         onChange={handleChange}
-        prefix={prefix}
+        icon={icon}
         {...restProps}
       />
     </InputBox>

@@ -32,11 +32,11 @@ export const errorInput = css`
   box-shadow: 0 0 3px ${red[10]};
 `;
 
-export const withPrefix = css`
+export const withIcon = css`
   padding-left: 30px;
 `;
 
-export const prefixStyle = css`
+export const iconStyle = css`
   pointer-events: none;
   position: absolute;
   color: ${black[60]};

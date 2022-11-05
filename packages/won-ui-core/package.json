@@ -1,6 +1,6 @@
 {
   "name": "@won-ui/core",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -32,14 +32,14 @@
   },
   "devDependencies": {
     "@won-ui/tsconfig": "*",
-    "@won-ui/types": "*"
+    "@won-ui/types": "*",
+    "@won-ui/hooks": "*"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.4",
-    "@won-ui/hooks": "*"
+    "@emotion/react": "^11.10.4"
   },
   "peerDependencies": {
     "react": ">=16.8.0",

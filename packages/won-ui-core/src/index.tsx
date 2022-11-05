@@ -5,7 +5,7 @@ export * from './IconActivator/IconActivator';
 export * from './Input/Input';
 export * from './InputBox/InputBox';
 export * from './Stack/Stack';
+export * from './Switch/Switch';
 export * from './Tag/Tag';
 export * from './Text/Text';
 export * from './TextInput/TextInput';
-

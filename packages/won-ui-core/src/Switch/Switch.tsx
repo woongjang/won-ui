@@ -1,0 +1,31 @@
+import { useUniqueId } from '@won-ui/hooks';
+import { wonColor } from '@won-ui/styles';
+import { CSSProperties, ReactNode } from 'react';
+import { labelStyle, switchStyle, wrapperStyle } from './Switch.style';
+
+interface SwitchProps {
+  className?: string;
+  style?: CSSProperties;
+  label?: ReactNode;
+  id?: string;
+  color?: keyof typeof wonColor;
+}
+
+export function Switch({ id, label, color = 'blue', ...restProps }: SwitchProps) {
+  const uniqueId = useUniqueId(id);
+  return (
+    <label css={wrapperStyle} htmlFor={uniqueId} {...restProps}>
+      <input css={switchStyle(color).input} type="checkbox" role="checkbox" id={uniqueId}/>
+      <span css={switchStyle(color).wrapper}>
+        <span css={switchStyle(color).ball} />
+      </span>
+      {label && (
+        <span css={labelStyle} >
+          {label}
+        </span>
+      )}
+    </label>
+  );
+}
+
+Switch.displayName = 'WON-Switch';

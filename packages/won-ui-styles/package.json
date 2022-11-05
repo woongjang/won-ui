@@ -1,7 +1,18 @@
 {
   "name": "@won-ui/styles",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
-  "main": "src/index.ts",
-  "types": "src/index.ts"
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }

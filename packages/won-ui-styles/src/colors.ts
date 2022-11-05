@@ -1,4 +1,6 @@
-export const black = {
+import { WonColor, WonTheme } from '@won-ui/types';
+
+export const black: WonColor = {
   100: '#141414',
   90: '#1B1B1B',
   80: '#222222',
@@ -11,7 +13,7 @@ export const black = {
   10: '#F2F2F2',
 };
 
-export const red = {
+export const red: WonColor = {
   100: '#3E0501',
   90: '#630802',
   80: '#880B03',
@@ -24,7 +26,7 @@ export const red = {
   10: '#FFE8E6',
 };
 
-export const orange = {
+export const orange: WonColor = {
   100: '#482000',
   90: '#763500',
   80: '#A44A00',
@@ -37,7 +39,7 @@ export const orange = {
   10: '#FFF1E5',
 };
 
-export const magenta = {
+export const magenta: WonColor = {
   100: '#380A2E',
   90: '#5A104A',
   80: '#7C1666',
@@ -50,7 +52,7 @@ export const magenta = {
   10: '#FBE9F7',
 };
 
-export const yellow = {
+export const yellow: WonColor = {
   100: '#483700',
   90: '#765A00',
   80: '#A47D00',
@@ -63,7 +65,7 @@ export const yellow = {
   10: '#FFF9E5',
 };
 
-export const blue = {
+export const blue: WonColor = {
   100: '#031A40',
   90: '#052A68',
   80: '#073A90',
@@ -76,7 +78,7 @@ export const blue = {
   10: '#E7EFFE',
 };
 
-export const indigo = {
+export const indigo: WonColor = {
   100: '#1B002F',
   90: '#270044',
   80: '#330059',
@@ -89,7 +91,7 @@ export const indigo = {
   10: '#F4E5FF',
 };
 
-export const purple = {
+export const purple: WonColor = {
   100: '#260C43',
   90: '#40166E',
   80: '#5A2099',
@@ -102,7 +104,7 @@ export const purple = {
   10: '#F2E7FD',
 };
 
-export const cyan = {
+export const cyan: WonColor = {
   100: '#0B3A37',
   90: '#125F5A',
   80: '#19847D',
@@ -115,7 +117,7 @@ export const cyan = {
   10: '#EAFBFA',
 };
 
-export const teal = {
+export const teal: WonColor = {
   100: '#082B21',
   90: '#0C4031',
   80: '#105541',
@@ -128,7 +130,7 @@ export const teal = {
   10: '#E9FBF6',
 };
 
-export const green = {
+export const green: WonColor = {
   100: '#063E11',
   90: '#0A651C',
   80: '#0E8C27',
@@ -142,7 +144,7 @@ export const green = {
 };
 
 
-export const wonColor = {
+export const wonColor: WonTheme = {
   black,
   red,
   orange,

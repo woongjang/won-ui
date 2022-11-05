@@ -1,11 +1,12 @@
 import { css } from '@emotion/react';
 import { wonColor } from '@won-ui/styles';
+import { Colors } from '@won-ui/types';
 
 export const text = css`
   font-family: Charcoal, sans-serif;
 `;
 
-export const fontColor = (theme: keyof typeof wonColor) => css`
+export const fontColor = (theme: Colors) => css`
   color: ${wonColor[theme][60]};
 `;
 

@@ -1,7 +1,8 @@
 import { css } from '@emotion/react';
 import { wonColor } from '@won-ui/styles';
+import { Colors } from '@won-ui/types';
 
-export const IconActivatorStyle = (theme: keyof typeof wonColor) => {
+export const IconActivatorStyle = (theme: Colors) => {
   const color = wonColor[theme];
   return css`
     border: 1px solid ${color[20]};

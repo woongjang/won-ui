@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import { wonColor } from '@won-ui/styles';
+import { Colors } from '@won-ui/types';
 
 export const wrapperStyle = css`
   display: inline-flex;
@@ -7,7 +8,7 @@ export const wrapperStyle = css`
   cursor: pointer;
 `;
 
-export const switchStyle = (theme: keyof typeof wonColor) => {
+export const switchStyle = (theme: Colors) => {
   const color = wonColor[theme];
   return {
     input: css`

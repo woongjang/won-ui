@@ -1,4 +1,4 @@
-import { wonColor } from '@won-ui/styles';
+import { Colors } from '@won-ui/types';
 import { ButtonHTMLAttributes, CSSProperties, PropsWithChildren } from 'react';
 import { buttonStyle } from './Button.style';
 
@@ -6,7 +6,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   style?: CSSProperties;
   disabled?: boolean;
-  color?: keyof typeof wonColor;
+  color?: Colors;
 }
 
 export function Button({

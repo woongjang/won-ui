@@ -1,7 +1,8 @@
 import { css } from '@emotion/react';
 import { black, wonColor } from '@won-ui/styles';
+import { Colors } from '@won-ui/types';
 
-export const buttonStyle = (theme: keyof typeof wonColor) => {
+export const buttonStyle = (theme: Colors) => {
   const color = wonColor[theme];
   return css`
     box-sizing: border-box;

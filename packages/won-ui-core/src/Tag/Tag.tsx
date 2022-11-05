@@ -1,11 +1,11 @@
-import { wonColor } from '@won-ui/styles';
+import { Colors } from '@won-ui/types';
 import { CSSProperties, PropsWithChildren } from 'react';
 import { tagStyle } from './Tag.style';
 
 interface TagProps {
   className?: string;
   style?: CSSProperties;
-  color?: keyof typeof wonColor;
+  color?: Colors;
   type?: 'light' | 'filled' | 'outline';
 }
 export function Tag({

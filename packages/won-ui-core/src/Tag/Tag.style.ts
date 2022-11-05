@@ -1,7 +1,8 @@
 import { css } from '@emotion/react';
 import { wonColor } from '@won-ui/styles';
+import { Colors } from '@won-ui/types';
 
-export const tagStyle = (theme: keyof typeof wonColor, type: 'light' | 'filled' | 'outline') => {
+export const tagStyle = (theme: Colors, type: 'light' | 'filled' | 'outline') => {
   const color = wonColor[theme];
   const defaultStyle = css`
     font-family: Charcoal, sans-serif;

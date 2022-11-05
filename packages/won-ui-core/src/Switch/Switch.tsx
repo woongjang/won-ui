@@ -1,5 +1,5 @@
 import { useUniqueId } from '@won-ui/hooks';
-import { wonColor } from '@won-ui/styles';
+import { Colors } from '@won-ui/types';
 import { CSSProperties, ReactNode } from 'react';
 import { labelStyle, switchStyle, wrapperStyle } from './Switch.style';
 
@@ -8,7 +8,7 @@ interface SwitchProps {
   style?: CSSProperties;
   label?: ReactNode;
   id?: string;
-  color?: keyof typeof wonColor;
+  color?: Colors;
 }
 
 export function Switch({ id, label, color = 'blue', ...restProps }: SwitchProps) {

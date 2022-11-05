@@ -1,5 +1,5 @@
 import { useUniqueId } from '@won-ui/hooks';
-import { wonColor } from '@won-ui/styles';
+import { Colors } from '@won-ui/types';
 import { Check } from 'phosphor-react';
 import { CSSProperties, ReactNode } from 'react';
 import { Stack } from '../Stack/Stack';
@@ -11,7 +11,7 @@ interface CheckboxProps {
   id?: string;
   label: ReactNode;
   disabled?: boolean;
-  color?: keyof typeof wonColor;
+  color?: Colors;
 }
 export function Checkbox({
   className,

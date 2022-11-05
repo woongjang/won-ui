@@ -1,5 +1,6 @@
+import { useUniqueId } from '@won-ui/hooks';
 import { Override } from '@won-ui/types';
-import { ChangeEvent, CSSProperties, InputHTMLAttributes, ReactNode, useRef } from 'react';
+import { ChangeEvent, CSSProperties, InputHTMLAttributes, ReactNode } from 'react';
 import { Input, InputProps } from '../Input/Input';
 import { InputBox, InputBoxProps } from '../InputBox/InputBox';
 
@@ -26,7 +27,7 @@ export function TextInput({
   icon,
   ...restProps
 }: TextInputProps) {
-  const uniqueId = id || useRef(`won-ui-${Math.random().toString(36).slice(2)}`).current;
+  const uniqueId = useUniqueId(id);
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     if (onChange) {

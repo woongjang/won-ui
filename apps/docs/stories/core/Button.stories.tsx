@@ -11,6 +11,7 @@ export const Basic = () => {
   return (
     <Stack
       direction='column'
+      align="flex-start"
       css={css`
         width: 100px;
         > * {

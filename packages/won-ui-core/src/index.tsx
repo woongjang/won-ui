@@ -4,6 +4,7 @@ export * from './Heading/Heading';
 export * from './IconActivator/IconActivator';
 export * from './Input/Input';
 export * from './InputBox/InputBox';
+export * from './Modal/Modal';
 export * from './Overlay/Overlay';
 export * from './Stack/Stack';
 export * from './Switch/Switch';

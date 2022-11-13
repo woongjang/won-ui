@@ -14,4 +14,5 @@ export const stackStyle = ({
   flex-direction: ${direction};
   align-items: ${align};
   justify-content: ${align};
+  position: relative;
 `;

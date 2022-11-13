@@ -2,10 +2,11 @@ import { css } from '@emotion/react';
 import { wonColor } from '@won-ui/styles';
 import { Colors } from '@won-ui/types';
 
-export const IconActivatorStyle = (theme: Colors) => {
+export const IconActivatorStyle = (theme: Colors, hadBorder: boolean) => {
   const color = wonColor[theme];
   return css`
-    border: 1px solid ${color[20]};
+    appearance: none;
+    border: ${hadBorder ? `1px solid ${color[20]}` : 'none'};
     box-sizing: border-box;
     height: 25px;
     width: 25px;
@@ -17,7 +18,7 @@ export const IconActivatorStyle = (theme: Colors) => {
     justify-content: center;
     cursor: pointer;
     transition: color 0.1s ease-out;
-    color: ${color[20]};
+    color: ${color[40]};
     outline: 0;
     background-color: transparent;
 
@@ -29,6 +30,7 @@ export const IconActivatorStyle = (theme: Colors) => {
     &:focus {
       color: ${color[60]};
       border-color: ${color[40]};
+      background-color: ${color[20]}
     }
   `;
 };

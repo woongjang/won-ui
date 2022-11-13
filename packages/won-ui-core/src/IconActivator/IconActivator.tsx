@@ -6,6 +6,7 @@ interface IconActivatorProps extends HTMLAttributes<HTMLButtonElement> {
   className?: string;
   style?: CSSProperties;
   color?: Colors;
+  hasBorder?: boolean
 }
 
 export function IconActivator({
@@ -13,12 +14,13 @@ export function IconActivator({
   style,
   color = 'black',
   children,
+  hasBorder = true,
   ...restProps
 }: PropsWithChildren<IconActivatorProps>) {
   return (
     <button
       className={className}
-      css={IconActivatorStyle(color)}
+      css={IconActivatorStyle(color, hasBorder)}
       type="button"
       {...restProps}
     >

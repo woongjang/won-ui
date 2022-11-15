@@ -1,6 +1,6 @@
 {
   "name": "@won-ui/hooks",
-  "version": "0.0.6",
+  "version": "0.0.6-test.0",
   "sideEffects": false,
   "license": "MIT",
   "main": "./dist/index.js",
@@ -10,7 +10,7 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts --external react",
+    "build": "tsup src/index.ts --format esm,cjs --dts",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "test": "jest",
     "test:watch": "jest --watch"

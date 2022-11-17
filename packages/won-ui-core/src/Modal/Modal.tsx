@@ -1,6 +1,6 @@
+import { useClickOutside } from '@won-ui/hooks';
 import { X } from 'phosphor-react';
 import { createRef, HTMLAttributes, PropsWithChildren, ReactNode } from 'react';
-import useClickOutside from '../../../won-ui-hooks/src/useClickOutside/useClickOutside';
 import { IconActivator } from '../IconActivator/IconActivator';
 import { Overlay } from '../Overlay/Overlay';
 import { Text } from '../Text/Text';

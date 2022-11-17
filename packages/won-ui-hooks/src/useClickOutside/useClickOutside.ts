@@ -2,7 +2,7 @@ import { RefObject, useEffect } from 'react';
 
 const EVENT_KEYS = ['touchstart', 'mousedown'];
 
-export default function useClickOutside<T extends HTMLElement>(
+export function useClickOutside<T extends HTMLElement>(
   ref: RefObject<T>,
   eventHandler: (e: Event) => void,
   eventKeys = EVENT_KEYS

@@ -30,11 +30,6 @@
   "bugs": {
     "url": "https://github.com/woongjang/won-ui/issues"
   },
-  "devDependencies": {
-    "@won-ui/tsconfig": "*",
-    "@won-ui/types": "*",
-    "@won-ui/hooks": "*"
-  },
   "publishConfig": {
     "access": "public"
   },

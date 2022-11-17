@@ -1,5 +1,5 @@
 {
-  "extends": "@won-ui/tsconfig/base.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "noEmit": true
   }

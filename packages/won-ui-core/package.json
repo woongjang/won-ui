@@ -1,6 +1,6 @@
 {
   "name": "@won-ui/core",
-  "version": "0.0.13-test.0",
+  "version": "0.0.14",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",

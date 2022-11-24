@@ -36,6 +36,8 @@
 - Tag
 - Text
 - TextInput
+- Pagination (^0.0.16)
+- Modal
 
 <br/>
 
@@ -43,9 +45,7 @@
 
 - Select
 - Table
-- Modal
 - Carousel
-- Pagination
 - Infinite Scroll
 
 <br/>

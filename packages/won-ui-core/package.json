@@ -1,6 +1,6 @@
 {
   "name": "@won-ui/core",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -32,6 +32,9 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.4"
   },
   "peerDependencies": {
     "react": ">=16.8.0",

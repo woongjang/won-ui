@@ -1,4 +1,5 @@
 import { Colors } from '@won-ui/types';
+import { CaretLeft, CaretRight } from 'phosphor-react';
 import { ChangeEvent, MouseEvent, useMemo, useState } from 'react';
 import { Button } from '../Button/Button';
 import { arrowStyle, containerStyle, pageBtnStyle, paginationStyle } from './Pagination.style';
@@ -77,8 +78,13 @@ export function Pagination(props: PaginationProps) {
   return (
     <div css={containerStyle}>
       <div css={paginationStyle}>
-        <Button css={arrowStyle(color).leftArrow} color={color} onClick={handleClickPrev}>
-          {'<'}
+        <Button
+          css={arrowStyle(color).leftArrow}
+          color={color}
+          onClick={handleClickPrev}
+          variant="outline"
+        >
+          <CaretLeft size={16} weight="bold" />
         </Button>
         {currentPages.map(el => (
           <Button
@@ -86,14 +92,21 @@ export function Pagination(props: PaginationProps) {
             css={pageBtnStyle(page === el)}
             key={el}
             onClick={handleChangePage(el)}
+            variant={page === el ? 'filled' : 'outline'}
           >
             {el}
           </Button>
         ))}
-        <Button css={arrowStyle(color).rightArrow} color={color} onClick={handleClickNext}>
-          {'>'}
+        <Button
+          css={arrowStyle(color).rightArrow}
+          color={color}
+          onClick={handleClickNext}
+          variant="outline"
+        >
+          <CaretRight size={16} weight="bold" />
         </Button>
       </div>
+      {/* TODO: Select 이관 후 컴포넌트 수정할 것 */}
       <select value={pageSize} onChange={handleChangePageSize}>
         {pageSizeOptions.map(option => (
           <option key={option} value={option}>

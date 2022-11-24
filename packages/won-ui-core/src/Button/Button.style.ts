@@ -19,7 +19,7 @@ const getVariantStyle = (color: WonColor, variant: ButtonVariant) => {
       color: ${color[60]};
     `,
     outline: css`
-      border: 2px solid ${color[60]};
+      border: 1px solid ${color[60]};
       box-shadow: 0px 3px 3px ${color[20]};
       background-color: transparent;
       color: ${color[60]};
@@ -50,7 +50,7 @@ export const buttonStyle = (theme: Colors, variant: ButtonVariant) => {
       cursor: pointer;
       user-select: none;
       letter-spacing: 0.5px;
-      transition: all 0.1s ease 0s;
+      transition: transform 0.1s ease 0s;
 
       &:active {
         box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);

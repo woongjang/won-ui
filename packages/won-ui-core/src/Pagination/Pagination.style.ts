@@ -13,17 +13,23 @@ export const paginationStyle = css`
 
 export const arrowStyle = (theme: Colors) => ({
   leftArrow: css`
-    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 3px;
     margin-right: 5px;
   `,
   rightArrow: css`
-    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 3px;
     margin-left: 5px;
   `,
 });
 
 export const pageBtnStyle = (isSelected: boolean) => css`
   margin-right: 2px;
-  color: white;
+  min-width: 32px;
+  padding: 0 2px;
+  margin: 0 2px;
   font-weight: ${isSelected ? 'bold' : 'normal'};
 `;

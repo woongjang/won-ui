@@ -2,7 +2,8 @@ import { Colors } from '@won-ui/types';
 import { CaretLeft, CaretRight } from 'phosphor-react';
 import { ChangeEvent, MouseEvent, useMemo, useState } from 'react';
 import { Button } from '../Button/Button';
-import { arrowStyle, containerStyle, pageBtnStyle, paginationStyle } from './Pagination.style';
+import { Stack } from '../Stack/Stack';
+import { arrowStyle, pageBtnStyle } from './Pagination.style';
 
 interface PaginationProps {
   defaultCurrent?: number;
@@ -15,6 +16,12 @@ interface PaginationProps {
   total: number;
 }
 
+/**
+ * TODO:
+ *  - usePagination 추출해서 커스텀 가능하도록 훅 제공
+ *  - 페이지 건너뛰기 기능 추가할 것
+ *  - 페이지 축약 표현 선택 프롭스로 추가할 것
+ */
 export function Pagination(props: PaginationProps) {
   const {
     defaultCurrent,
@@ -76,10 +83,10 @@ export function Pagination(props: PaginationProps) {
     if (onChange) onChange(page + 1, pageSize);
   };
   return (
-    <div css={containerStyle}>
-      <div css={paginationStyle}>
+    <Stack >
+      <Stack>
         <Button
-          css={arrowStyle(color).leftArrow}
+          css={arrowStyle.leftArrow}
           color={color}
           onClick={handleClickPrev}
           variant="outline"
@@ -98,14 +105,14 @@ export function Pagination(props: PaginationProps) {
           </Button>
         ))}
         <Button
-          css={arrowStyle(color).rightArrow}
+          css={arrowStyle.rightArrow}
           color={color}
           onClick={handleClickNext}
           variant="outline"
         >
           <CaretRight size={16} weight="bold" />
         </Button>
-      </div>
+      </Stack>
       {/* TODO: Select 이관 후 컴포넌트 수정할 것 */}
       <select value={pageSize} onChange={handleChangePageSize}>
         {pageSizeOptions.map(option => (
@@ -114,7 +121,7 @@ export function Pagination(props: PaginationProps) {
           </option>
         ))}
       </select>
-    </div>
+    </Stack>
   );
 }
 

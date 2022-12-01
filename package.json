@@ -6,7 +6,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "commit": "ts-node scripts/commit.ts",
+    "commit": "ts-node --esm scripts/commit.ts",
     "build": "turbo run build",
     "dev": "turbo run dev --no-cache --parallel --continue",
     "lint": "turbo run lint",
@@ -31,6 +31,7 @@
     "@types/node": "^18.11.10",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
+    "enquirer": "^2.3.6",
     "eslint": "^8.15.0",
     "eslint-config-acme": "*",
     "jest": "^29.2.2",

@@ -37,58 +37,38 @@ export function Pagination(props: PaginationProps) {
   const [pageSize, setPageSize] = useState(defaultPageSize);
 
   const page = useMemo(() => (propsCurrent ? propsCurrent : current), [propsCurrent, current]);
+  const maxPageNum = useMemo(() => Math.ceil(total / pageSize), [total, pageSize]);
 
   const currentPages = useMemo(() => {
-    const page = propsCurrent ? propsCurrent : current;
-    const maxPageNum = Math.ceil(total / pageSize);
-    let startNum = maxPageNum - page < pagesGap ? maxPageNum - pagesGap * 2 : page - pagesGap;
-    // 처음 선택일 경우
-    if (maxPageNum <= pagesGap * 2 + 1 || page <= pagesGap + 1) {
+    // 가중치 값
+    const additionValue = hasMoreButton ? 2 : 0;
+    // 기본 페이지 수보다 maxPage가 높은 경우
+    const isLimitedPages = maxPageNum <= pagesGap * 2 + 1
+
+    let pagesLength = isLimitedPages ? maxPageNum : pagesGap * 2 + 1;
+    let startNum = page - pagesGap - additionValue;
+    if (pagesLength !== maxPageNum && hasMoreButton) {
+      pagesLength = pagesLength + 4;
+    }
+    const minStartNum = pagesGap + additionValue + 1;
+    const maxCenterNum = maxPageNum - pagesGap - additionValue;
+    // 스타트 넘버
+    if (!isLimitedPages && page > maxCenterNum) {
+      startNum = maxCenterNum - pagesGap - additionValue;
+    }
+    if (isLimitedPages || page <= minStartNum) {
       startNum = 1;
     }
-
-    let pagesLength = maxPageNum < pagesGap * 2 + 1 ? maxPageNum : pagesGap * 2 + 1;
-
-    if (hasMoreButton && maxPageNum > pagesGap * 2 + 1) {
-      if (maxPageNum > pagesGap * 2 && current >= maxPageNum - pagesGap * 2) {
-        pagesLength = (pagesGap + 1) * 2 + 1;
-        if (page === maxPageNum - pagesGap * 2) {
-          pagesLength -= 1;
-        }
-        startNum = maxPageNum - (pagesGap + 1) * 2;
-      }
-
-      if (startNum >= 1 && current < (pagesGap + 1) * 2) {
-        startNum = 1;
-        pagesLength = (pagesGap + 1) * 2 + 1;
-      }
-    }
-
-    return Array.from({ length: pagesLength }, (_, i) => i + startNum);
-  }, [current, total, pageSize, pagesGap, propsCurrent]);
-
-  const showFirstPage = useMemo(
-    () => hasMoreButton && current > pagesGap * 2 + 1,
-    [hasMoreButton, current, pagesGap]
-  );
-
-  const showLastPage = useMemo(
-    () =>
-      hasMoreButton &&
-      Math.ceil(total / pageSize) - pagesGap * 2 > pagesGap * 2 + 1 &&
-      current <= Math.ceil(total / pageSize) - pagesGap * 2,
-    [hasMoreButton, current, total, pagesGap, pageSize]
-  );
-
-  const showLeftMoreButton = useMemo(
-    () => hasMoreButton && current > pagesGap * 2 + 1,
-    [hasMoreButton, current, pagesGap]
-  );
-
-  const showRightMoreButton = useMemo(
-    () => hasMoreButton && current < Math.ceil(total / pageSize) - pagesGap * 2,
-    [hasMoreButton, current, pagesGap, total, pageSize]
-  );
+    
+    const pages: (number | 'left' | 'right')[] = Array.from({ length: pagesLength }, (_, i) => {
+      if (hasMoreButton && i <= 1 && startNum > 1) return i === 0 ? 1 : 'left';
+      if (hasMoreButton && i >= pagesLength - 2 && maxPageNum >= pagesLength + startNum)
+        return i === pagesLength - 1 ? maxPageNum : 'right';
+      return i + startNum;
+    });
+    
+    return pages;
+  }, [current, total, pageSize, pagesGap, propsCurrent, page]);
 
   const handleChangePage = (page: number) => (e: MouseEvent<HTMLSpanElement>) => {
     if (onChange) {
@@ -115,8 +95,8 @@ export function Pagination(props: PaginationProps) {
     setCurrent(page - 1);
     if (onChange) onChange(page - 1, pageSize);
   };
+
   const handleClickNext = (e: MouseEvent<HTMLButtonElement>) => {
-    const maxPageNum = Math.ceil(total / pageSize);
     if (page === maxPageNum) return;
     setCurrent(page + 1);
     if (onChange) onChange(page + 1, pageSize);
@@ -146,57 +126,30 @@ export function Pagination(props: PaginationProps) {
         >
           <CaretLeft size={16} weight="bold" />
         </Button>
-        {showFirstPage && hasMoreButton && (
-          <Button
-            color={color}
-            css={pageBtnStyle(page === 1)}
-            onClick={handleChangePage(1)}
-            variant={page === 1 ? 'filled' : 'outline'}
-          >
-            {1}
-          </Button>
-        )}
-        {showLeftMoreButton && hasMoreButton && (
-          <Button
-            css={moreBtnStyle}
-            color={color}
-            onClick={handleClickMoreButton('left')}
-            variant="borderless"
-          >
-            <DotsThree size={24} />
-          </Button>
-        )}
-        {currentPages.map(el => (
-          <Button
-            color={color}
-            css={pageBtnStyle(page === el)}
-            key={el}
-            onClick={handleChangePage(el)}
-            variant={page === el ? 'filled' : 'outline'}
-          >
-            {el}
-          </Button>
-        ))}
-        {showRightMoreButton && hasMoreButton && (
-          <Button
-            css={moreBtnStyle}
-            color={color}
-            onClick={handleClickMoreButton('right')}
-            variant="borderless"
-          >
-            <DotsThree size={24} />
-          </Button>
-        )}
-        {showLastPage && hasMoreButton && (
-          <Button
-            color={color}
-            css={pageBtnStyle(page === Math.ceil(total / pageSize))}
-            onClick={handleChangePage(Math.ceil(total / pageSize))}
-            variant={page === Math.ceil(total / pageSize) ? 'filled' : 'outline'}
-          >
-            {Math.ceil(total / pageSize)}
-          </Button>
-        )}
+        {currentPages.map(el => {
+          if (el === 'left' || el === 'right')
+            return (
+              <Button
+                css={moreBtnStyle}
+                color={color}
+                onClick={handleClickMoreButton(el)}
+                variant="borderless"
+              >
+                <DotsThree size={24} />
+              </Button>
+            );
+          return (
+            <Button
+              color={color}
+              css={pageBtnStyle(page === el)}
+              key={el}
+              onClick={handleChangePage(el)}
+              variant={page === el ? 'filled' : 'outline'}
+            >
+              {el}
+            </Button>
+          );
+        })}
         <Button
           css={arrowStyle.rightArrow}
           color={color}

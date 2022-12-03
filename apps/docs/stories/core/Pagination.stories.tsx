@@ -41,9 +41,9 @@ export const Basic = () => {
       <Pagination total={100} color="magenta" pageSizeOptions={[30, 40, 50, 60]} />
       <Text size="lg">pageGap : 중심을 기준으로 양옆으로 몇개씩인지</Text>
       <Text size="lg">
-        default값은 2
+        default값은 2 아래 지정값은 1
       </Text>
-      <Pagination total={400} color="orange" pagesGap={4} />
+      <Pagination total={400} color="orange" pagesGap={1} />
       <Text size="lg">
         hasMoreButton total = 50
       </Text>

@@ -6,7 +6,7 @@ import { Stack } from '../Stack/Stack';
 import { arrowStyle, moreBtnStyle, pageBtnStyle } from './Pagination.style';
 
 interface PaginationProps {
-  defaultCurrent?: number;
+  defaultPage?: number;
   currentPage?: number;
   onChange?: (page: number, pageSize: number) => void;
   defaultPageSize?: number;
@@ -23,7 +23,7 @@ interface PaginationProps {
  */
 export function Pagination(props: PaginationProps) {
   const {
-    defaultCurrent,
+    defaultPage,
     currentPage: propsCurrent,
     onChange,
     pageSizeOptions = [10, 20, 30, 50],
@@ -33,7 +33,7 @@ export function Pagination(props: PaginationProps) {
     color = 'blue',
     hasMoreButton = false,
   } = props;
-  const [current, setCurrent] = useState(defaultCurrent || 1);
+  const [current, setCurrent] = useState(defaultPage || 1);
   const [pageSize, setPageSize] = useState(defaultPageSize);
 
   const page = useMemo(() => (propsCurrent ? propsCurrent : current), [propsCurrent, current]);

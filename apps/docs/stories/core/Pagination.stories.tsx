@@ -56,6 +56,10 @@ export const Basic = () => {
         hasMoreButton total = 300
       </Text>
       <Pagination total={300} color="black" pagesGap={2} hasMoreButton={true} />
+      <Text size="lg">
+        with defaultPage
+      </Text>
+      <Pagination defaultPage={12} total={300} color="black" pagesGap={2} hasMoreButton={true} />
     </Stack>
   );
 };

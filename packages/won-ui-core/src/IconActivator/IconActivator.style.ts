@@ -2,11 +2,11 @@ import { css } from '@emotion/react';
 import { wonColor } from '@won-ui/styles';
 import { Colors } from '@won-ui/types';
 
-export const IconActivatorStyle = (theme: Colors, hadBorder: boolean) => {
+export const IconActivatorStyle = (theme: Colors, hasBorder: boolean) => {
   const color = wonColor[theme];
   return css`
     appearance: none;
-    border: ${hadBorder ? `1px solid ${color[20]}` : 'none'};
+    border: 1px solid ${hasBorder ? color[20] : 'transparent'};
     box-sizing: border-box;
     height: 25px;
     width: 25px;

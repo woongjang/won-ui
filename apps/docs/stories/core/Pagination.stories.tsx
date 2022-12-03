@@ -40,10 +40,22 @@ export const Basic = () => {
       <Text size="lg">custom pageSizeOptions</Text>
       <Pagination total={100} color="magenta" pageSizeOptions={[30, 40, 50, 60]} />
       <Text size="lg">pageGap : 중심을 기준으로 양옆으로 몇개씩인지</Text>
-      <Text size="lg" as="span">
+      <Text size="lg">
         default값은 2
       </Text>
       <Pagination total={400} color="orange" pagesGap={4} />
+      <Text size="lg">
+        hasMoreButton total = 50
+      </Text>
+      <Pagination total={50} color="black" pagesGap={2} hasMoreButton={true} />
+      <Text size="lg">
+        hasMoreButton total = 100
+      </Text>
+      <Pagination total={100} color="black" pagesGap={2} hasMoreButton={true} />
+      <Text size="lg">
+        hasMoreButton total = 300
+      </Text>
+      <Pagination total={300} color="black" pagesGap={2} hasMoreButton={true} />
     </Stack>
   );
 };

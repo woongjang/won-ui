@@ -1,5 +1,5 @@
-import { UsePaginationProps } from '@won-ui/types';
-import { ChangeEvent, MouseEvent, useMemo, useState } from 'react';
+import { PageInfo, UsePaginationProps } from '@won-ui/types';
+import { ChangeEvent, MouseEvent, useCallback, useMemo, useState } from 'react';
 
 /**
  * @required
@@ -24,12 +24,10 @@ export function usePagination({
   const maxPageNum = useMemo(() => Math.ceil(total / pageSize), [total, pageSize]);
   const additionalPages = useMemo(() => (hasMoreButton ? 2 : 0), [hasMoreButton]);
 
-  const page = useMemo(() => {
-    if (propsCurrentPage === undefined) return current;
-    if (propsCurrentPage <= 1) return 1;
-    if (propsCurrentPage >= maxPageNum) return maxPageNum;
-    return propsCurrentPage;
-  }, [propsCurrentPage, current]);
+  const page = useMemo(
+    () => (propsCurrentPage === undefined ? current : propsCurrentPage),
+    [propsCurrentPage, current]
+  );
 
   const currentPages = useMemo(() => {
     // 기본 페이지 수보다 maxPage가 높은 경우
@@ -50,11 +48,18 @@ export function usePagination({
       startNum = 1;
     }
 
-    const pages: (number | 'left' | 'right')[] = Array.from({ length: pagesLength }, (_, i) => {
-      if (hasMoreButton && i <= 1 && startNum > 1) return i === 0 ? 1 : 'left';
-      if (hasMoreButton && i >= pagesLength - 2 && maxPageNum >= pagesLength + startNum)
-        return i === pagesLength - 1 ? maxPageNum : 'right';
-      return i + startNum;
+    const pages: PageInfo[] = Array.from({ length: pagesLength }, (_, i) => {
+      let updatePage: PageInfo['page'] = i + startNum;
+      if (hasMoreButton && i <= 1 && startNum > 1) {
+        updatePage = i === 0 ? 1 : 'left';
+      }
+      if (hasMoreButton && i >= pagesLength - 2 && maxPageNum >= pagesLength + startNum) {
+        updatePage = i === pagesLength - 1 ? maxPageNum : 'right';
+      }
+      return {
+        selected: page === updatePage,
+        page: updatePage,
+      };
     });
 
     return pages;

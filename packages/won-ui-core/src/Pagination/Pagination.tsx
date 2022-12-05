@@ -1,10 +1,11 @@
 import { usePagination } from '@won-ui/hooks';
 import { Colors, UsePaginationProps } from '@won-ui/types';
-import { CaretLeft, CaretRight, DotsThree } from 'phosphor-react';
+import { CaretLeft, CaretRight } from 'phosphor-react';
 import { useMemo } from 'react';
 import { Button } from '../Button/Button';
 import { Stack } from '../Stack/Stack';
-import { arrowStyle, moreBtnStyle, pageBtnStyle } from './Pagination.style';
+import { arrowStyle } from './Pagination.style';
+import { PaginationItem } from './PaginationItem';
 
 interface PaginationProps extends UsePaginationProps {
   color?: Colors;
@@ -48,30 +49,18 @@ export function Pagination(props: PaginationProps) {
         >
           <CaretLeft size={16} weight="bold" />
         </Button>
-        {currentPages.map(el => {
-          if (el === 'left' || el === 'right')
-            return (
-              <Button
-                css={moreBtnStyle}
-                color={color}
-                onClick={handleClickMoreButton(el)}
-                variant="borderless"
-              >
-                <DotsThree size={24} />
-              </Button>
-            );
-          return (
-            <Button
-              color={color}
-              css={pageBtnStyle(page === el)}
-              key={el}
-              onClick={handleChangePage(el)}
-              variant={page === el ? 'filled' : 'outline'}
-            >
-              {el}
-            </Button>
-          );
-        })}
+        {currentPages.map(pageInfo => (
+          <PaginationItem
+            key={pageInfo.page}
+            pageInfo={pageInfo}
+            color={color}
+            onClick={
+              typeof pageInfo.page === 'number'
+                ? handleChangePage(pageInfo.page)
+                : handleClickMoreButton(pageInfo.page)
+            }
+          />
+        ))}
         <Button
           css={arrowStyle.rightArrow}
           disabled={page === maxPageNum}

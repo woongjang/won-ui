@@ -8,3 +8,8 @@ export interface UsePaginationProps {
   total: number;
   hasMoreButton?: boolean;
 }
+
+export interface PageInfo {
+  page: number | 'left' | 'right';
+  selected: boolean;
+}

@@ -13,6 +13,6 @@ export const stackStyle = ({
   display: flex;
   flex-direction: ${direction};
   align-items: ${align};
-  justify-content: ${align};
+  justify-content: ${justify};
   position: relative;
 `;

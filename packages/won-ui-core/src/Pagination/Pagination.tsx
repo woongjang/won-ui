@@ -16,6 +16,7 @@ export function Pagination(props: PaginationProps) {
   const {
     page,
     currentPages,
+    maxPageNum,
     pageSize,
     pageSizeOptions,
     handleChangePage,

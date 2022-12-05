@@ -18,16 +18,18 @@ export function usePagination({
   total,
   hasMoreButton = false,
 }: UsePaginationProps) {
-  
   const [current, setCurrent] = useState(defaultPage);
   const [pageSize, setPageSize] = useState(defaultPageSize);
 
-  const page = useMemo(
-    () => (propsCurrentPage ? propsCurrentPage : current),
-    [propsCurrentPage, current]
-  );
   const maxPageNum = useMemo(() => Math.ceil(total / pageSize), [total, pageSize]);
   const additionalPages = useMemo(() => (hasMoreButton ? 2 : 0), [hasMoreButton]);
+
+  const page = useMemo(() => {
+    if (propsCurrentPage === undefined) return current;
+    if (propsCurrentPage <= 1) return 1;
+    if (propsCurrentPage >= maxPageNum) return maxPageNum;
+    return propsCurrentPage;
+  }, [propsCurrentPage, current]);
 
   const currentPages = useMemo(() => {
     // 기본 페이지 수보다 maxPage가 높은 경우

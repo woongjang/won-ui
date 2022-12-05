@@ -65,49 +65,52 @@ export function usePagination({
     return pages;
   }, [current, total, pageSize, pagesGap, propsCurrentPage, page]);
 
-  const handleChangePage = (page: number) => (e: MouseEvent<HTMLSpanElement>) => {
-    if (onChange) {
-      onChange(page, pageSize);
-      return;
-    }
-    setCurrent(page);
+  const handleCurrent = useCallback(
+    (updatePage: number, updatePageSize: number = pageSize) => {
+      let changePage = updatePage;
+      if (updatePageSize !== pageSize) {
+        // 페이지가 존재하지 않을 경우에만 수정
+        const changeMaxPageNum = Math.ceil(total / updatePageSize);
+        if (updatePage > changeMaxPageNum) changePage = changeMaxPageNum;
+        setPageSize(updatePageSize);
+      }
+      if (changePage !== page) setCurrent(changePage);
+      if (onChange) {
+        onChange(updatePage, updatePageSize);
+      }
+    },
+    [onChange, pageSize, page]
+  );
+
+  const handleChangePage = (clickedPage: number) => (e: MouseEvent<HTMLSpanElement>) => {
+    handleCurrent(clickedPage);
   };
 
   const handleChangePageSize = (e: ChangeEvent<HTMLSelectElement>) => {
     const changePageSize = Number(e.target.value);
-    // 페이지가 존재하지 않을 경우에만 수정
-    const changeMaxPageNum = Math.ceil(total / changePageSize);
-    setPageSize(changePageSize);
-    const pageNum = page > changeMaxPageNum ? changeMaxPageNum : page;
-    if (page > changeMaxPageNum) setCurrent(changeMaxPageNum);
-    if (onChange) {
-      onChange(pageNum, changePageSize);
-    }
+    handleCurrent(page, changePageSize);
   };
 
   const handleClickPrev = (e: MouseEvent<HTMLButtonElement>) => {
-    if (page === 1) return;
-    setCurrent(page - 1);
-    if (onChange) onChange(page - 1, pageSize);
+    if (page <= 1) return;
+    handleCurrent(page - 1)
   };
 
   const handleClickNext = (e: MouseEvent<HTMLButtonElement>) => {
     if (page === maxPageNum) return;
-    setCurrent(page + 1);
-    if (onChange) onChange(page + 1, pageSize);
+    handleCurrent(page + 1);
   };
 
   const handleClickMoreButton =
     (position: 'left' | 'right') => (e: MouseEvent<HTMLButtonElement>) => {
-      if (position === 'left') {
-        setCurrent(prev => (prev - (pagesGap * 2 + 1) <= 1 ? 1 : prev - (pagesGap * 2 + 1)));
-        return;
-      }
-      setCurrent(prev =>
-        prev + pagesGap * 2 + 1 >= Math.ceil(total / pageSize)
+      let updatePage = page + pagesGap * 2 + 1 >= Math.ceil(total / pageSize)
           ? Math.ceil(total / pageSize)
-          : prev + pagesGap * 2 + 1
-      );
+          : page + pagesGap * 2 + 1
+
+      if (position === 'left') {
+        updatePage = (page - (pagesGap * 2 + 1) <= 1 ? 1 : page - (pagesGap * 2 + 1))
+      }
+      handleCurrent(updatePage)
     };
 
   return {

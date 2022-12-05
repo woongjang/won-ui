@@ -40,6 +40,7 @@ export function Pagination(props: PaginationProps) {
       <Stack>
         <Button
           css={arrowStyle.leftArrow}
+          disabled={page === 1}
           color={color}
           onClick={handleClickPrev}
           variant="outline"
@@ -72,6 +73,7 @@ export function Pagination(props: PaginationProps) {
         })}
         <Button
           css={arrowStyle.rightArrow}
+          disabled={page === maxPageNum}
           color={color}
           onClick={handleClickNext}
           variant="outline"

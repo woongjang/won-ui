@@ -1,17 +1,18 @@
 import { usePagination } from '@won-ui/hooks';
 import { Colors, UsePaginationProps } from '@won-ui/types';
 import { CaretLeft, CaretRight, DotsThree } from 'phosphor-react';
+import { useMemo } from 'react';
 import { Button } from '../Button/Button';
 import { Stack } from '../Stack/Stack';
 import { arrowStyle, moreBtnStyle, pageBtnStyle } from './Pagination.style';
 
 interface PaginationProps extends UsePaginationProps {
   color?: Colors;
+  position?: 'left' | 'right' | 'center';
 }
 
-
 export function Pagination(props: PaginationProps) {
-  const { color = 'blue', ...usePaginationOptions } = props;
+  const { color = 'blue', position = 'center', ...usePaginationOptions } = props;
   const {
     page,
     currentPages,
@@ -24,8 +25,18 @@ export function Pagination(props: PaginationProps) {
     handleClickMoreButton,
   } = usePagination(usePaginationOptions);
 
+  const paginationPosition = useMemo(
+    () =>
+      ({
+        left: 'flex-start',
+        right: 'flex-end',
+        center: 'center',
+      }[position]),
+    [position]
+  );
+
   return (
-    <Stack>
+    <Stack justify={paginationPosition}>
       <Stack>
         <Button
           css={arrowStyle.leftArrow}

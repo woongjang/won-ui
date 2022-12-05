@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { PropsWithChildren, useRef, useState } from 'react';
-import useClickOutside from './useClickOutside';
+import { useClickOutside } from './useClickOutside';
 
 /**
  *  variables for test

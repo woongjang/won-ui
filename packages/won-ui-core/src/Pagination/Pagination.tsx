@@ -38,23 +38,22 @@ export function Pagination(props: PaginationProps) {
 
   const page = useMemo(() => (propsCurrent ? propsCurrent : current), [propsCurrent, current]);
   const maxPageNum = useMemo(() => Math.ceil(total / pageSize), [total, pageSize]);
+  const additionalPages = useMemo(() => hasMoreButton ? 2 : 0, [hasMoreButton]);
 
   const currentPages = useMemo(() => {
-    // 가중치 값
-    const additionValue = hasMoreButton ? 2 : 0;
     // 기본 페이지 수보다 maxPage가 높은 경우
     const isLimitedPages = maxPageNum <= pagesGap * 2 + 1
 
     let pagesLength = isLimitedPages ? maxPageNum : pagesGap * 2 + 1;
-    let startNum = page - pagesGap - additionValue;
+    let startNum = page - pagesGap - additionalPages;
     if (pagesLength !== maxPageNum && hasMoreButton) {
-      pagesLength = pagesLength + 4;
+      pagesLength = pagesLength + additionalPages * 2;
     }
-    const minStartNum = pagesGap + additionValue + 1;
-    const maxCenterNum = maxPageNum - pagesGap - additionValue;
+    const minStartNum = pagesGap + additionalPages + 1;
+    const maxCenterNum = maxPageNum - pagesGap - additionalPages;
     // 스타트 넘버
     if (!isLimitedPages && page > maxCenterNum) {
-      startNum = maxCenterNum - pagesGap - additionValue;
+      startNum = maxCenterNum - pagesGap - additionalPages;
     }
     if (isLimitedPages || page <= minStartNum) {
       startNum = 1;

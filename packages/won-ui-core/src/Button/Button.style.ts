@@ -1,5 +1,5 @@
 import { css, SerializedStyles } from '@emotion/react';
-import { black, wonColor } from '@won-ui/styles';
+import { wonColor } from '@won-ui/styles';
 import { Colors, WonColor } from '@won-ui/types';
 
 export type ButtonVariant = 'filled' | 'light' | 'outline' | 'borderless';
@@ -34,8 +34,9 @@ const getVariantStyle = (color: WonColor, variant: ButtonVariant) => {
   return variants[variant];
 };
 
-export const buttonStyle = (theme: Colors, variant: ButtonVariant) => {
-  const variantStyle = getVariantStyle(wonColor[theme], variant);
+export const buttonStyle = (theme: Colors, variant: ButtonVariant, disalbed: boolean) => {
+  const color = wonColor[theme];
+  const variantStyle = getVariantStyle(color, variant);
   return [
     variantStyle,
     css`
@@ -61,8 +62,8 @@ export const buttonStyle = (theme: Colors, variant: ButtonVariant) => {
         box-shadow: none;
         transform: none;
         pointer-events: none;
-        color: ${black[20]};
-        background-color: ${black[10]};
+        color: ${color[10]};
+        background-color: ${color[20]};
       }
     `,
   ];

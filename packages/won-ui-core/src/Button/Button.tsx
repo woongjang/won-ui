@@ -22,7 +22,7 @@ export function Button({
   return (
     <button
       className={className}
-      css={buttonStyle(color, variant)}
+      css={buttonStyle(color, variant, disabled)}
       disabled={disabled}
       type={type}
       {...restProps}

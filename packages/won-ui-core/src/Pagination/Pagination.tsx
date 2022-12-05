@@ -7,7 +7,7 @@ import { Stack } from '../Stack/Stack';
 import { arrowStyle } from './Pagination.style';
 import { PaginationItem } from './PaginationItem';
 
-interface PaginationProps extends UsePaginationProps {
+export interface PaginationProps extends UsePaginationProps {
   color?: Colors;
   position?: 'left' | 'right' | 'center';
 }

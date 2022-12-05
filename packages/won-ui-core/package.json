@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "build": "tsup",
-    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
+    "dev": "tsup",
     "lint": "TIMING=1 eslint \"src/**/*.ts*\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "test": "jest",

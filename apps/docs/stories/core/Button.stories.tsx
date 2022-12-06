@@ -110,6 +110,30 @@ export const Basic = () => {
         <Button variant="borderless" color="green">green</Button>
         <Button variant="borderless" color="teal">teal</Button>
       </Stack>
+      <Text size="lg" as="span">
+        Disabled with Color
+      </Text>
+      <Stack
+        direction="row"
+        align="flex-start"
+        css={css`
+          flex-wrap: wrap;
+          padding: 20px 0;
+        `}
+      >
+        <Button variant="borderless" disabled color="black">black</Button>
+        <Button variant="borderless" disabled color="red">red</Button>
+        <Button variant="borderless" disabled color="orange">orange</Button>
+        <Button variant="borderless" disabled color="magenta">magenta</Button>
+        <Button variant="borderless" disabled color="yellow">yellow</Button>
+        <Button variant="borderless" disabled color="blue">blue</Button>
+        <Button variant="borderless" disabled color="cyan">cyan</Button>
+        <Button variant="borderless" disabled color="indigo">indigo</Button>
+        <Button variant="borderless" disabled color="purple">purple</Button>
+        <Button variant="borderless" disabled color="green">green</Button>
+        <Button variant="borderless" disabled color="teal">teal</Button>
+      </Stack>
     </Stack>
+    
   );
 };

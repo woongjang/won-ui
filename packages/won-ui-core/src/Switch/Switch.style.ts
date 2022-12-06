@@ -36,7 +36,7 @@ export const switchStyle = (theme: Colors) => {
       display: inline-flex;
       align-items: center;
       user-select: none;
-      transition: color 0.2s ease;
+      transition: background-color 0.3s ease-out;
     `,
     ball: css`
       position: absolute;
